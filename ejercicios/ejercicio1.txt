@@ -1,0 +1,29 @@
+# Ejercicio 1.
+
+1. Ir a la página de distribuciones de la librería scipy:
+
+https://docs.scipy.org/doc/scipy/reference/stats.html
+
+Elegir la distribución geométrica.
+
+X = "Número de ensayos hasta conseguir un éxito"
+
+from scipy.stats import geom
+import numpy as np
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(1, 1)
+
+p = 0.5
+X = geom(p)
+x = np.arange(0, 5)
+ax.plot(x, geom.pmf(x, p), 'bo', ms=8, label='geom pmf')
+ax.vlines(x, 0, geom.pmf(x, p), colors='b', lw=5, alpha=0.5)
+
+muestras = X.rvs(size=1000)
+
+
+# Ejercicio 2.
+
+1. Crear su propia base de datos.
+2. Eliminar o sustituir datos ausentes.
+3. Realizar un estudio descriptivo. Más intervalos de confianza.
