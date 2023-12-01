@@ -1,0 +1,21 @@
+Instrucciones para crear el ambiente de anaconda.
+
+Se recomienda crear un nuevo ambiente para evitar que conda busque todas
+las dependencias con los paquetes existentes en un ambiente ya creado.
+
+'conda create --name ceura -c conda-forge python=3.10 pymc=5.10.0 notebook seaborn'
+
+activar el ambiente con
+
+'conda activate ceura'
+
+En algunos ordenadores, si no se tienen instaladas algunas librerias de alto rendimiento la ejecución puede ser más lenta.
+Por ejemplo, si al ejecutar el código aparece la siguiente advertencia:
+
+'WARNING (pytensor.tensor.blas): Using NumPy C-API based implementation for BLAS functions.'
+
+Se puede intentar instalar blas y mkl con
+
+'conda install -c conda-forge mkl mkl-service blas'
+
+NOTA: Los resultados sin las librerias de BLAS y MKL serán igual de correctos, simplemente taradarán mucho más.
